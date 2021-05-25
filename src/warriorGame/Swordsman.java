@@ -5,11 +5,11 @@ import java.util.Random;
 public class Swordsman extends Warrior{
     public Swordsman() {
         setDamage(100);
+        setName("Swordsman");
     }
 
     @Override
     public void attack(Warrior player2) {
-        System.out.println("the Swordsman hit ");
         player2.takeDamage(this);
     }
 
@@ -18,6 +18,5 @@ public class Swordsman extends Warrior{
         Random random = new Random();
         int damage = player2.getDamage() - random.nextInt(15) + random.nextInt(15);
         setHealth(getHealth() - damage);
-        System.out.println("the swordsman take damage " + getHealth());
     }
 }

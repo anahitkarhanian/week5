@@ -3,6 +3,15 @@ package warriorGame;
 public abstract class Warrior {
     private int health = 1000;
     private int damage;
+    private String name;
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getName() {
+        return name;
+    }
 
     public void setHealth(int health) {
         this.health = health;
