@@ -1,7 +1,4 @@
-package warriorGame.warrior;
-
-import warriorGame.shield.SecondLevel;
-import warriorGame.shield.Shield;
+package warriorGame;
 
 import java.util.Random;
 

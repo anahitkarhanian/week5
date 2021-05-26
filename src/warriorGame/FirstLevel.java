@@ -1,6 +1,5 @@
-package warriorGame.shield;
+package warriorGame;
 
-import warriorGame.warrior.Warrior;
 
 public class FirstLevel extends Shield{
     public void takeDamage(Warrior player1, Warrior player2) {

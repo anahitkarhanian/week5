@@ -1,10 +1,5 @@
 package warriorGame;
 
-import warriorGame.warrior.Archer;
-import warriorGame.warrior.Mage;
-import warriorGame.warrior.Swordsman;
-import warriorGame.warrior.Warrior;
-
 import java.util.Random;
 import java.util.Scanner;
 
