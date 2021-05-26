@@ -1,4 +1,4 @@
-package warriorGame;
+package warriorGame.warrior;
 
 public abstract class Warrior {
     private int health = 1000;
