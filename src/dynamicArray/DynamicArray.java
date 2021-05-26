@@ -24,6 +24,14 @@ public class DynamicArray {
         System.arraycopy(array,0,this.array,0, this.array.length);
     }
 
+    public void setElement(String element, int index){
+        if (index < 0 || index >= length){
+            System.out.println("invalid action");
+        } else {
+            array[index] = element;
+        }
+    }
+
     public void addElement(String element){
         if (length == size) {
             extracted();
