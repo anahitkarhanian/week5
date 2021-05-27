@@ -17,11 +17,19 @@ public class DynamicArray {
         array = new String[length];
     }
 
-    DynamicArray(String[] array){
+    /*DynamicArray(String[] array){
         size = array.length;
         length = array.length;
         this.array = new String[length];
         System.arraycopy(array,0,this.array,0, this.array.length);
+    }*/
+
+    public int getSize(){
+        return length;
+    }
+
+    public String[] getArray(){
+        return array;
     }
 
     public void setElement(String element, int index){
@@ -89,8 +97,46 @@ public class DynamicArray {
                 }
             }
         }
-        if (!check){
-            System.out.println("There is no such element");
+    }
+
+    public void removeAll(String[] arr){
+        for (int i = 0; i < arr.length; i++) {
+            removeElement(arr[i]);
+        }
+    }
+
+    public void sort(sort type){
+        //boolean check;
+        if(type == sort.ASC) {
+            for (int i = 0; i < length; i++) {
+                boolean check = false;
+                for (int j = 0; j < length - i - 1; j++) {
+                    if (array[j].compareTo(array[j + 1]) > 0) {
+                        check = true;
+                        String temp = array[j];
+                        array[j] = array[j + 1];
+                        array[j + 1] = temp;
+                    }
+                }
+                if (!check) {
+                    break;
+                }
+            }
+        } else {
+            for (int i = 0; i < length - 1; i++) {
+                boolean check = false;
+                for (int j = 0; j < length - i - 1; j++) {
+                    if (array[j].compareTo(array[j + 1]) < 0) {
+                        check = true;
+                        String temp = array[j];
+                        array[j] = array[j + 1];
+                        array[j + 1] = temp;
+                    }
+                }
+                if (!check) {
+                    break;
+                }
+            }
         }
     }
 
@@ -100,15 +146,13 @@ public class DynamicArray {
         } else if (index1 >= length || index2 >= length || index1 < 0 || index2 < 0){
             System.out.println("invalid action");
         } else {
-            for (int i = 0; i < length; i++) {
                 String temp = array[index1];
                 array[index1] = array[index2];
                 array[index2] = temp;
-            }
         }
     }
 
-    public boolean containElement(String element){
+    public boolean containsElement(String element){
         if (length != 0){
             for (int i = 0; i < length; i++) {
                 if (array[i].equals(element)){
@@ -128,6 +172,30 @@ public class DynamicArray {
                 System.out.print(array[i] + " ");
             }
         }
+    }
+
+    public int indexOf(String element){
+        if (length != 0){
+            for (int i = 0; i < length; i++) {
+                if (array[i] == element) {
+                    return i;
+                }
+            }
+            return -1;
+        }
+        return -1;
+    }
+
+    public int lastIndexOf(String element){
+        if (length != 0){
+            for (int i = length - 1; i >= 0; i--) {
+                if (array[i] == element) {
+                    return i;
+                }
+            }
+            return -1;
+        }
+        return -1;
     }
 
     public String getElement(int index){
